@@ -10,7 +10,8 @@ import React from 'react'
     <div>
       <footer className="bg-dark text-light py-3" style={footerStyle}>
         <p className="text-center">
-          &copy; {new Date().getFullYear()} My Todo List. All rights reserved.
+          &copy; {new Date().getFullYear()} Built  by  ~Anjali | Stay organized. Stay happy.
+          
         </p>
       </footer>
     </div>
