@@ -1,7 +1,18 @@
+/* Global body styling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #c77caa, #e4c2f4); /* Soft rose to lavender */
+  min-height: 100vh;
+  color: #2e2e2e;
+}
+
+/* App container */
 .App {
   text-align: center;
 }
 
+/* Optional logo spin animation */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,21 +24,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +31,115 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Navbar Styling */
+.custom-navbar {
+  background: rgba(121, 57, 107, 0.8); /* wine purple with transparency */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 0.8rem 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #f7d6e0 !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+  color: #ffd6f2 !important;
+}
+
+.navbar-toggler {
+  border: 1px solid #ffe2f2;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Main container for todos */
+.container {
+  background: rgba(255, 240, 255, 0.75); /* soft light pink glass */
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  box-sizing: border-box;
+}
+
+/* Headings */
+h2, h3 {
+  font-weight: bold;
+  color: #6d3a75;
+}
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #a050a0;
+}
+
+/* Buttons */
+.btn-success {
+  background-color: #a050a0;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(160, 80, 160, 0.3);
+}
+
+.btn-success:hover {
+  background-color: #c06cd1;
+  transform: scale(1.05);
+}
+
+/* Form inputs */
+input[type="text"] {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 6px #d18ad1;
+  border-color: #c06cd1;
+}
+
+/* Footer */
+footer,
+.custom-footer {
+  background: rgba(121, 57, 107, 0.8);
+  color: #f7d6e0;
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.footer-text {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Smooth transitions globally */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

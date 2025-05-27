@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Header from "./MyComponents/Header";
-import  Footer  from "./MyComponents/Footer";
+import Footer from "./MyComponents/Footer";
 import { Todos } from "./MyComponents/Todos";
 import { AddTodo } from "./MyComponents/AddTodo";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./MyComponents/About";
-//import { Footer } from "./MyComponents/Footer";
 
 function App() {
   let initTodo;
@@ -23,12 +23,10 @@ function App() {
   }, [todos]);
 
   const onDelete = (todo) => {
-    console.log("I am on delete of todo", todo);
     setTodos(todos.filter((e) => e !== todo));
   };
 
   const addTodo = (title, desc) => {
-    console.log("I am adding this todo", title, desc);
     let sno = todos.length > 0 ? todos[todos.length - 1].sno + 1 : 1;
     const myTodo = {
       sno: sno,
@@ -40,19 +38,24 @@ function App() {
 
   return (
     <Router>
-      <Header title="My Todo List" searchBar={false} />
-      <Routes>
-        <Route exact
-          path="/"
-          element={
-            <>
-              <AddTodo addTodo={addTodo} />
-              <Todos todos={todos} onDelete={onDelete} />
-            </>
-          }
-        />
-        <Route exact path="/about" element={<About />} />
-      </Routes>
+      <Header title="📝 My Todo List" searchBar={false} />
+      <div className="container my-5 shadow-sm p-4 rounded bg-light">
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <h2 className="text-center text-primary mb-4">📋 Tasks Manager</h2>
+                <AddTodo addTodo={addTodo} />
+                <hr />
+                <Todos todos={todos} onDelete={onDelete} />
+              </>
+            }
+          />
+          <Route exact path="/about" element={<About />} />
+        </Routes>
+      </div>
       <Footer />
     </Router>
   );
